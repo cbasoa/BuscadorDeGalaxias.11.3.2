@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", function(){
     
 let btnBuscar = document.getElementById("btnBuscar");
 let container = document.getElementById("container");
-let url = `http://images-api.nasa.gov/`;
+let url = `http://images-api.nasa.gov/search?q=`;
 let item = [];
 
 // Evento del click 
 btnBuscar.addEventListener("click", function () {
     let search = document.getElementById("inputBuscar").value;
-    fetch(url + `search?q=` + search)
+    fetch(url + search)
         .then(response => {
             if (response.ok) {
                 return response.json()
